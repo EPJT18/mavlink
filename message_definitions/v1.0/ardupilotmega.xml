@@ -1601,5 +1601,10 @@
       <field type="uint16_t[4]" name="rpm" units="rpm">RPM (eRPM).</field>
       <field type="uint16_t[4]" name="count">count of telemetry packets received (wraps at 65535).</field>
     </message>
+    <!-- Kookaburra Messages -->
+    <message id="11100" name="BEGIN_VISION_LANDING">
+      <description>Enable vision landing.</description>
+      <field type="uint8_t" name="visionland">Enable.</field>
+    </message>
   </messages>
 </mavlink>
