@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- Swooparu:                                     -->
+  <!-- mavlink ID range: 6900 - 6999                            -->
+  <enums>
+    <enum name="SWOOP_ARMING_CHECK_FLAGS_1">
+      <description>Flag bits to indicate which of the arming checks is failing</description>
+      <entry value="1" name="SAFETY_SWITCH_DISSABLED"/>  <!-- 0 -->
+      <entry value="2" name="BAROMETER_NOT_HEALTHY"/> <!-- 1 -->
+      <entry value="4" name="GYRO_NOT_HEALTHY"/> <!-- 2 -->
+      <entry value="8" name="GYRO_NOT_CALIBRATED"/> <!-- 3 -->
+      <entry value="16" name="GYROS_INCONSISTENT"/> <!-- 4 -->
+      <entry value="32" name="ACCELS_NOT_HEALTHY"/> <!-- 5 -->
+      <entry value="64" name="ACCELS_NOT_CALIBRATED"/> <!-- 6 -->
+      <entry value="128" name="ACCELS_INCONSISTENT"/> <!-- 7 -->
+      <entry value="256" name="COMPASS_NOT_HEALTHY"/> <!-- 8 -->
+      <entry value="512" name="COMPASS_NOT_CALIBRATED"/> <!-- 9 -->
+      <entry value="1024" name="COMPASS_INCONSISTENT"/> <!-- 10 -->
+      <entry value="2048" name="COMPASS_OFFSETS"/> <!-- 11 -->
+      <entry value="4096" name="HIGH_MAG_FIELD_STRENGTH"/> <!-- 12 -->
+      <entry value="8192" name="BAD_GPS_POSITION"/> <!-- 13 -->
+      <entry value="16384" name="GPS_NOT_HEALTHY"/> <!-- 14 -->
+      <entry value="32768" name="GPS_POSITIONS_DIFFERENT"/>  <!-- 15 -->
+      <entry value="65536‬" name="GPS_BLENDING_UNHEALTHY"/><!-- 16 -->
+      <entry value="131072‬" name="GPS_DIFFERENT_TO_EKF"/><!-- 17 -->
+      <entry value="262144‬" name="BAD_PARAMS"/><!-- 18 -->
+      <entry value="524288‬" name="BATTERY_PROBLEM"/><!-- 19 There are > 100 sub variants of these, but not much point when we dont use them-->
+      <entry value="1048576‬" name="LOGGING_FAILED"/> <!-- 20 -->
+      <entry value="2097152‬" name="NO_SD_CARD"/> <!-- 21 -->
+      <entry value="4194304" name="MANUAL_TRANSMITTER_PROBLEM"/> <!-- 22 again, duh, we dont use these-->
+      <entry value="8388608‬" name="NO_MISSION_LOADED"/> <!-- 23 -->
+      <entry value="16777216‬" name="MISSION_MISSING_ELEMENTS"/>  <!-- 24 -->
+      <entry value="33554432‬‬" name="RANGEFINDER_NOT_HEALTHY"/><!-- 25 -->
+      <entry value="67108864‬" name="AUTOPILOT_VOLTAGE_ERROR"/><!-- 26 -->
+      <entry value="134217728‬‬" name="AUTOPILOT_INTERNAL_SYSTEM_ERROR"/><!-- 27 -->
+      <entry value="268435456‬‬" name="CAN_BUS_NOT_HEALTHY"/><!-- 28 -->
+      <entry value="536870912‬‬" name="PROXIMITY_ERROR"/> <!-- 29 -->
+      <entry value="1073741824‬" name="NO_SD_CARD"/> <!-- 30 -->
+    </enum>
+
+    <enum name="SWOOP_ARMING_CHECK_FLAGS_2">
+      <description>Flag bits to indicate which of the arming checks is failing</description>
+      <entry value="1" name="AIRSPEED_1_NOT_HEALTHY"/>  <!-- 0 -->
+      <entry value="2" name="AIRSPEED_2_NOT_HEALTHY"/> <!-- 1 -->
+      <entry value="4" name="AIRSPEED_3_NOT_HEALTHY"/> <!-- 2 -->
+      <entry value="8" name="AIRSPEED_4_NOT_HEALTHY"/> <!-- 3 -->
+      <entry value="16" name="QUADPLANE_NOT_RUNNING"/> <!-- 4 -->
+      <entry value="32" name="ADSB_THREAT"/> <!-- 5 -->
+      <entry value="64" name="MOTORS_ESTOP"/> <!-- 6 -->
+    </enum>
+
+    <enum name="SWOOP_HOVER_ASSIST_FLAGS">
+      <description>Flag bits to indicate the hover assist status</description>
+      
+      <entry value="1" name="HOVER_ASSIST_TRIGGERED"/>
+      <entry value="2" name="HOVER_ASSIST_REASON_ALT"/>
+      <entry value="4" name="HOVER_ASSIST_REASON_SPEED"/>
+      <entry value="8" name="HOVER_ASSIST_REASON_ATTITUDE"/>
+      <entry value="16" name="HOVER_ASSIST_COUNTER_TIMEOUT"/>
+      <entry value="32" name="HOVER_ASSIST_LONG_TIMEOUT"/>
+      <entry value="64" name="EMERGENCY_LAND_TRIGGERED"/>
+    </enum>
+
+  
+    <enum name="SWOOP_GPS_HEALTH">
+      <description>Flag bits to indicate GPS issues</description>
+      <entry value="0" name="GOOD"/>  <!-- 0 -->
+      <entry value="1" name="DEGRADED"/> <!-- 1 -->
+      <entry value="2" name="SIGNIFICANTLY_DEGRADED"/> <!-- 2 -->
+      <entry value="3" name="FAILED"/> <!-- 3 -->
+    </enum>
+
+
+    <enum name="SWOOP_VIBRATION_FLAGS">
+      <description>Flag bits to indicate vibration issues</description>
+      <entry value="0" name="NO_FLAG"/>  <!-- 0 -->
+      <entry value="1" name="VIBRATION_NOTE"/>  <!-- 0 -->
+      <entry value="2" name="VIBRATION_ADVICE"/> <!-- 1 -->
+      <entry value="3" name="VIBRATION_CAUTION"/> <!-- 2 -->
+      <entry value="4" name="VIBRATION_WARNING"/> <!-- 3 -->
+
+    </enum>
+
+
+    <enum name="SWOOP_MOTOR_FAILURE_FLAGS">
+      <description>Flag bits to indicate motor issues</description>
+      <entry value="1" name="HOVER_MOTOR_1_FAILURE"/>  <!-- 0 -->
+      <entry value="2" name="HOVER_MOTOR_2_FAILURE"/> <!-- 1 -->
+      <entry value="4" name="HOVER_MOTOR_3_FAILURE"/> <!-- 2 -->
+      <entry value="8" name="HOVER_MOTOR_4_FAILURE"/> <!-- 3 -->
+      <entry value="16" name="HOVER_MOTOR_5_FAILURE"/> <!-- 4 -->
+      <entry value="32" name="HOVER_MOTOR_6_FAILURE"/> <!-- 5 -->
+      <entry value="64" name="HOVER_MOTOR_7_FAILURE"/> <!-- 6 -->
+      <entry value="128" name="HOVER_MOTOR_8_FAILURE"/> <!-- 7 -->
+      <entry value="128" name="FORWARD_MOTOR_1_FAILURE"/> <!-- 7 -->
+      <entry value="256" name="FORWARD_MOTOR_2_FAILURE"/> <!-- 8 -->
+    </enum>
+
+    <enum name="LIDAR_FLAGS">
+      <description>Flag bits to indicate lidar issues</description>
+      <entry value="1" name="LIDAR_HEIGHT_NOTE"/>  <!-- 0 -->
+      <entry value="2" name="LIDAR_HEIGHT_ADVICE"/> <!-- 1 -->
+      <entry value="4" name="LIDAR_SENSOR_FAILURE"/> <!-- 1 -->
+    </enum>
+
+    <enum name="BATTERY_FLAGS">
+      <description>Flag bits to indicate battery issues</description>
+      <entry value="1" name="FORWARD_ENDURANCE_NOTE"/>  <!-- 0 -->
+      <entry value="2" name="FORWARD_ENDURANCE_ADVCE"/> <!-- 1 -->
+      <entry value="4" name="FORWARD_ENDURANCE_CAUTION"/> <!-- 2 -->
+      <entry value="8" name="HOVER_ENDURANCE_NOTE"/> <!-- 3 -->
+      <entry value="16" name="HOVE_ENDURANCE_ADVICE"/> <!-- 4 -->
+      <entry value="32" name="HOVER_ENDURANCE_CAUTION"/> <!-- 5 -->
+      <entry value="64" name="FORWARD_BATTERY_FAILURE_DETECTED"/> <!-- 6 -->
+      <entry value="128" name="HOVER_BATTERY_FAILURE_DETECTED"/> <!-- 7 -->
+    </enum>
+
+    <enum name="ALT_TOLERACE_FLAGS">
+      <description>Flag bits to indicate alt hold issues</description>
+      <entry value="1" name="ALT_TOLLERANCE_NOTE"/>  <!-- 0 -->
+      <entry value="2" name="ALT_TOLLERANCE_ADVICE"/> <!-- 1 -->
+    </enum>
+
+    <enum name="WIND_FLAGS">
+      <description>Flag bits to indicate wind strength issues</description>
+      <entry value="1" name="WIND_ADVICE"/>  <!-- 0 -->
+      <entry value="2" name="WIND_CAUTION"/> <!-- 1 -->
+    </enum>
+
+    <enum name="HOVER_ATTITUDE_FLAG">
+      <description>Flag bits to indicate hover attitude hold issues</description>
+      <entry value="1" name="HOVER_ATTITUDE_ADVICE"/>  <!-- 0 -->
+      <entry value="2" name="HOVER_ATTITUDE_CAUTION"/> <!-- 1 -->
+      <entry value="4" name="HOVER_ATTITUDE_WARNING"/> <!-- 2 -->
+      <entry value="8" name="HOVER_MOTOR_OSCILLATIONS"/> <!-- 3 -->
+      <entry value="16" name="HOVER_MOTOR_OFFSETS"/> <!-- 4 -->
+    </enum>
+
+    <enum name="LANDING_FLAGS">
+      <description>Flag bits to indicate landing issues</description>
+      <entry value="1" name="LANDING_G_ADVICE"/>  <!-- 0 -->
+      <entry value="2" name="LANDING_G_CAUTION"/> <!-- 1 -->
+      <entry value="4" name="LANDING_G_WARNING"/> <!-- 2 -->
+      <entry value="8" name="LANDING_ATTITUDE"/> <!-- 3 -->
+    </enum>
+
+    <enum name="FORWARD_FLIGHT_FLAGS">
+      <description>Flag bits to indicate aerodymanic drag issues</description>
+      <entry value="1" name="ASYMETRIC_DRAG"/>  <!-- 0 -->
+      <entry value="2" name="FORWARD_HIGH_DRAG"/> <!-- 1 -->
+      <entry value="4" name="ESC_TEMP"/> <!-- 2 -->
+    </enum>
+
+    <enum name="AIRSPEED_FLAGS">
+      <description>Flag bits to indicate airspeed issues</description>
+      <entry value="1" name="AIRSPEED_LOW_NOTE"/>  <!-- 0 -->
+      <entry value="2" name="AIRSPEED_LOW_ADVICE"/> <!-- 1 -->
+      <entry value="4" name="AIRSPEED_SENSOR_1_UNHEALTHY"/> <!-- 2 -->
+      <entry value="8" name="AIRSPEED_SENSOR_1_FAILED"/> <!-- 3 -->
+      <entry value="16" name="AIRSPEED_SENSOR_2_UNHEALTHY"/> <!-- 4 -->
+      <entry value="32" name="AIRSPEED_SENSOR_2_FAILED"/> <!-- 5 -->
+      <entry value="64" name="AIRSPEED_SENSOR_3_UNHEALTHY"/> <!-- 6 -->
+      <entry value="128" name="AIRSPEED_SENSOR_3_FAILED"/> <!-- 7 -->
+      <entry value="256" name="AIRSPEED_SENSOR_4_UNHEALTHY"/> <!-- 8 -->
+      <entry value="512" name="AIRSPEED_SENSOR_4_FAILED"/> <!-- 9 -->
+
+    </enum>
+
+    <enum name="SERVO_FLAGS">
+      <description>Flag bits to indicate servo issues</description>
+      <entry value="1" name="SERVO_POSITION_OFFSET_DETECTED"/>  <!-- 0 -->
+      <entry value="2" name="SERVO_FAILURE_DETECTED"/> <!-- 1 -->
+
+    </enum>
+
+    <enum name="AUTOMATED_ACTION_REASON">
+      <description>Reason Contingency land has been triggered</description>
+      <entry value="0" name="NO_ACTION"/>  
+      <entry value="1" name="FORWARD_ENDURANCE"/> 
+      <entry value="2" name="HOVER_ENDURANCE"/> 
+      <entry value="3" name="FORWARD_MOTOR_FAILURE"/>
+      <entry value="4" name="FORWARD_MOTOR_FAILURE"/>  
+
+    </enum>
+
+  </enums>
+
+  <messages>
+    <message id="6901" name="SWOOP_FLAGS">
+      <description>Periodic Status Flag Packet</description>
+      <field type="uint32_t" name="armingFlags1" enum="SWOOP_ARMING_CHECK_FLAGS_1">Flag bits to indicate which of the arming checks is failing</field>
+      <field type="uint32_t" name="actionFlags2" enum="SWOOP_ARMING_CHECK_FLAGS_2">Flag bits to indicate which of the arming checks is failing</field>
+    </message>
+    
+  </messages>
+</mavlink>
