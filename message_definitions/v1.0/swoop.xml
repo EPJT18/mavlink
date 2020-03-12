@@ -21,25 +21,11 @@
       <entry value="8192" name="BAD_GPS_POSITION"/> <!-- 13 -->
       <entry value="16384" name="GPS_NOT_HEALTHY"/> <!-- 14 -->
       <entry value="32768" name="GPS_POSITIONS_DIFFERENT"/>  <!-- 15 -->
-      <entry value="65536‬" name="GPS_BLENDING_UNHEALTHY"/><!-- 16 -->
-      <entry value="131072‬" name="GPS_DIFFERENT_TO_EKF"/><!-- 17 -->
-      <entry value="262144‬" name="BAD_PARAMS"/><!-- 18 -->
-      <entry value="524288‬" name="BATTERY_PROBLEM"/><!-- 19 There are > 100 sub variants of these, but not much point when we dont use them-->
-      <entry value="1048576‬" name="LOGGING_FAILED"/> <!-- 20 -->
-      <entry value="2097152‬" name="NO_SD_CARD"/> <!-- 21 -->
-      <entry value="4194304" name="MANUAL_TRANSMITTER_PROBLEM"/> <!-- 22 again, duh, we dont use these-->
-      <entry value="8388608‬" name="NO_MISSION_LOADED"/> <!-- 23 -->
-      <entry value="16777216‬" name="MISSION_MISSING_ELEMENTS"/>  <!-- 24 -->
-      <entry value="33554432‬‬" name="RANGEFINDER_NOT_HEALTHY"/><!-- 25 -->
-      <entry value="67108864‬" name="AUTOPILOT_VOLTAGE_ERROR"/><!-- 26 -->
-      <entry value="134217728‬‬" name="AUTOPILOT_INTERNAL_SYSTEM_ERROR"/><!-- 27 -->
-      <entry value="268435456‬‬" name="CAN_BUS_NOT_HEALTHY"/><!-- 28 -->
-      <entry value="536870912‬‬" name="PROXIMITY_ERROR"/> <!-- 29 -->
-      <entry value="1073741824‬" name="NO_SD_CARD"/> <!-- 30 -->
+     
     </enum>
 
     <enum name="SWOOP_ARMING_CHECK_FLAGS_2">
-      <description>Flag bits to indicate which of the arming checks is failing</description>
+      <description>Flag bits to indicate which of the arming checks is failing2</description>
       <entry value="1" name="AIRSPEED_1_NOT_HEALTHY"/>  <!-- 0 -->
       <entry value="2" name="AIRSPEED_2_NOT_HEALTHY"/> <!-- 1 -->
       <entry value="4" name="AIRSPEED_3_NOT_HEALTHY"/> <!-- 2 -->
@@ -47,8 +33,27 @@
       <entry value="16" name="QUADPLANE_NOT_RUNNING"/> <!-- 4 -->
       <entry value="32" name="ADSB_THREAT"/> <!-- 5 -->
       <entry value="64" name="MOTORS_ESTOP"/> <!-- 6 -->
+      <entry value="128" name="GPS_BLENDING_UNHEALTHY"/><!-- 7 -->
+      <entry value="256" name="GPS_DIFFERENT_TO_EKF"/><!-- 8 -->
+      <entry value="512" name="BAD_PARAMS"/><!-- 9 -->
+      <entry value="1024" name="BATTERY_PROBLEM"/><!-- 10 -->
+      <entry value="2048" name="LOGGING_FAILED"/><!-- 11 -->
+      <entry value="4096" name="NO_SD_CARD"/><!-- 12 -->
+      <entry value="8192" name="MANUAL_TRANSMITTER_PROBLEM"/><!-- 13 -->
+      <entry value="16384" name="NO_MISSION_LOADED"/><!-- 14 -->
+      <entry value="32768" name="MISSION_MISSING_ELEMENTS"/><!-- 15 -->
     </enum>
 
+    <enum name="SWOOP_ARMING_CHECK_FLAGS_3">
+      <description>Flag bits to indicate which of the arming checks is failing2</description>
+      <entry value="1" name="RANGEFINDER_NOT_HEALTHY"/>  <!-- 0 -->
+      <entry value="2" name="AUTOPILOT_VOLTAGE_ERROR"/> <!-- 1 -->
+      <entry value="4" name="AUTOPILOT_INTERNAL_SYSTEM_ERROR"/> <!-- 2 -->
+      <entry value="8" name="CAN_BUS_NOT_HEALTHY"/> <!-- 3 -->
+      <entry value="16" name="PROXIMITY_ERROR"/> <!-- 4 -->
+      <entry value="32" name="NO_SD_CARD"/> <!-- 5 -->
+    </enum>
+    
     <enum name="SWOOP_HOVER_ASSIST_FLAGS">
       <description>Flag bits to indicate the hover assist status</description>
       
@@ -182,6 +187,7 @@
       <entry value="4" name="FORWARD_MOTOR_FAILURE"/>  
 
     </enum>
+
 
   </enums>
 
