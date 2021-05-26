@@ -322,6 +322,7 @@
       <entry value="0" name="THRUST_DISSABLE"/>
       <entry value="1" name="ATTITUDE_RELAX"/>
       <entry value="2" name="HOVER_ACTIVE"/>
+    </enum>
 
   </enums>
 
@@ -443,7 +444,7 @@
     </message>
 
     <message id="6969" name="CAPTAIN_COMMAND">
-      <description>Master autopilot command </descrioption>
+      <description>Master autopilot command</description>
       <field type="int16_t" name="pitchTarget"> Commanded pitch target</field>
       <field type="int16_t" name="rollTarget"> Commanded roll target</field>
       <field type="int16_t" name="yawTarget"> Commanded yaw target</field>
@@ -453,7 +454,7 @@
     </message>
 
     <message id="6970" name="EKF_STATUS_REPORT">
-      <descrioption> Autopilot EKF status report </description>
+      <description> Autopilot EKF status report </description>
       <field type="int16_t" name="velocityX"> Current EKF Velocity X</field>
       <field type="int16_t" name="velocityY"> Current EKF Velocity Y</field>
       <field type="int16_t" name="velocityZ"> Current EKF Velocity Z</field>
