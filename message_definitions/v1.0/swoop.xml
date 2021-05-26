@@ -453,7 +453,7 @@
 
     </message>
 
-    <message id="6970" name="EKF_STATUS_REPORT">
+    <message id="6970" name="EKF_SWOOP_STATUS">
       <description> Autopilot EKF status report </description>
       <field type="int16_t" name="velocityX"> Current EKF Velocity X</field>
       <field type="int16_t" name="velocityY"> Current EKF Velocity Y</field>
