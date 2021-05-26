@@ -317,6 +317,12 @@
       <entry value="3" name="DAA_IRIS"/>
     </enum>
 
+    <enum name="COMMAND_THRUST_STATUS">
+      <description>Commanded thrust status</description>
+      <entry value="0" name="THRUST_DISSABLE"/>
+      <entry value="1" name="ATTITUDE_RELAX"/>
+      <entry value="2" name="HOVER_ACTIVE"/>
+
   </enums>
 
   <messages>
@@ -436,5 +442,33 @@
       <field type="char[9]" name="callsign">Vehicle identifier</field>
     </message>
 
+    <message id="6969" name="CAPTAIN_COMMAND">
+      <description>Master autopilot command </descrioption>
+      <field type="int16_t" name="pitchTarget"> Commanded pitch target</field>
+      <field type="int16_t" name="rollTarget"> Commanded roll target</field>
+      <field type="int16_t" name="yawTarget"> Commanded yaw target</field>
+      <field type="int16_t" name="thrustTarget"> Commanded thrust target</field>
+      <field type="uint8_t" name="thrustStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
+
+    </message>
+
+    <message id="6970" name="EKF_STATUS_REPORT">
+      <descrioption> Autopilot EKF status report </description>
+      <field type="int16_t" name="velocityX"> Current EKF Velocity X</field>
+      <field type="int16_t" name="velocityY"> Current EKF Velocity Y</field>
+      <field type="int16_t" name="velocityZ"> Current EKF Velocity Z</field>
+      <field type="int16_t" name="attitudeX"> Current EKF Attitude X</field> 
+      <field type="int16_t" name="attitudeY"> Current EKF Attitude Y</field> 
+      <field type="int16_t" name="attitudeZ"> Current EKF Attitude Z</field> 
+      <field type="int32_t" name="positionX"> Current EKF positon X</field>
+      <field type="int32_t" name="positionY"> Current EKF positon Y</field>
+      <field type="int32_t" name="positionZ"> Current EKF positon Z</field>
+      <field type="uint8_t" name="command_rank"> Command Rank of Status Reporter</field>
+    </message>
+
+
+
   </messages>
+
+
 </mavlink>
