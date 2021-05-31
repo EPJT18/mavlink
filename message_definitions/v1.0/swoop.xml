@@ -445,12 +445,12 @@
 
     <message id="6969" name="CAPTAIN_COMMAND">
       <description>Master autopilot command</description>
-      <field type="int16_t" name="pitchTarget"> Commanded pitch target</field>
-      <field type="int16_t" name="rollTarget"> Commanded roll target</field>
-      <field type="int16_t" name="yawTarget"> Commanded yaw target</field>
-      <field type="int16_t" name="thrustTarget"> Commanded thrust target</field>
-      <field type="uint8_t" name="thrustStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
-
+      <field type="float" name="pitchTarget"> Commanded pitch target</field>
+      <field type="float" name="rollTarget"> Commanded roll target</field>
+      <field type="float" name="yawTarget"> Commanded yaw target</field>
+      <field type="float" name="thrustTarget"> Commanded thrust target</field>
+      <field type="int8_t" name="thrustStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
+      <field type="int8_t" name="arm"> Captain commands copilots to arm</field>
     </message>
 
     <message id="6970" name="EKF_SWOOP_STATUS">
@@ -465,6 +465,7 @@
       <field type="int32_t" name="positionY"> Current EKF positon Y</field>
       <field type="int32_t" name="positionZ"> Current EKF positon Z</field>
       <field type="uint8_t" name="command_rank"> Command Rank of Status Reporter</field>
+      <field type="uint8_t" name="can_arm"> Does the system pass all prearm checks</field>
     </message>
 
 
