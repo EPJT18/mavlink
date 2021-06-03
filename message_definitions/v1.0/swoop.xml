@@ -448,8 +448,10 @@
       <field type="float" name="pitchTarget"> Commanded pitch target</field>
       <field type="float" name="rollTarget"> Commanded roll target</field>
       <field type="float" name="yawTarget"> Commanded yaw target</field>
-      <field type="float" name="thrustTarget"> Commanded thrust target</field>
-      <field type="int8_t" name="thrustStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
+      <field type="float" name="hoverThrustTarget"> Commanded hover thrust target</field>
+      <field type="float" name="forwardThrustTarget"> Commanded forward thrust target</field>
+      <field type="float" name="flapsPercent"> Commanded flaps</field>
+      <field type="int8_t" name="spoolStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
       <field type="int8_t" name="arm"> Captain commands copilots to arm</field>
     </message>
 
