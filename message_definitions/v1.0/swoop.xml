@@ -453,6 +453,8 @@
       <field type="float" name="flapsPercent"> Commanded flaps</field>
       <field type="int8_t" name="spoolStatus" enum="COMMAND_THRUST_STATUS"> Commmand hover system power on</field>
       <field type="int8_t" name="arm"> Captain commands copilots to arm</field>
+      <field type="int16_t" name="wp_num"> Captains current wp</field>
+      <field type="int8_t" name="rank"> Captains rank</field>
     </message>
 
     <message id="6970" name="EKF_SWOOP_STATUS">
